@@ -1,0 +1,59 @@
+The code has been updated to include examples of JavaScript events: click, mouseover, and keyup. Each event dynamically displays a message in response to user interactions.
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Events Example</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="mt-4">JavaScript Events Example</h1>
+
+    <button id="clickButton" class="btn btn-primary mb-3">Click Me</button>
+    <input id="hoverInput" type="text" class="form-control mb-3" placeholder="Hover over me">
+    <input id="keyInput" type="text" class="form-control" placeholder="Type something">
+
+    <div id="eventMessage" class="alert alert-info mt-3" style="display: none;"></div>
+  </div>
+
+  <script>
+    // Click Event
+    document.getElementById("clickButton").addEventListener("click", () => {
+      const eventMessage = document.getElementById("eventMessage");
+      eventMessage.textContent = "Button was clicked!";
+      eventMessage.style.display = "block";
+      console.log("Button click event triggered.");
+    });
+
+    // Mouseover Event
+    document.getElementById("hoverInput").addEventListener("mouseover", () => {
+      const eventMessage = document.getElementById("eventMessage");
+      eventMessage.textContent = "You hovered over the input box!";
+      eventMessage.style.display = "block";
+      console.log("Mouseover event triggered.");
+    });
+
+    // Keyup Event
+    document.getElementById("keyInput").addEventListener("keyup", (event) => {
+      const eventMessage = document.getElementById("eventMessage");
+      eventMessage.textContent = `You typed: ${event.target.value}`;
+      eventMessage.style.display = "block";
+      console.log(`Keyup event triggered with value: ${event.target.value}`);
+    });
+  </script>
+
+  <style>
+    body {
+      margin-top: 20px;
+    }
+  </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
