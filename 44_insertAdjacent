@@ -1,0 +1,62 @@
+The code has been updated to include an example of using the insertAdjacent methods to add content at different positions relative to an element.
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>insertAdjacent Example</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Nature</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" name="search" type="search" placeholder="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1 class="mt-4">Using insertAdjacent Methods</h1>
+    <div id="mainContent" class="my-3 border p-3">
+      <p>This is the existing content inside the container.</p>
+    </div>
+    <button id="insertButton" class="btn btn-primary">Insert Content</button>
+  </div>
+
+  <script>
+    document.getElementById("insertButton").addEventListener("click", function () {
+      const mainContent = document.getElementById("mainContent");
+
+      // Using insertAdjacentHTML
+      mainContent.insertAdjacentHTML("beforebegin", "<div class='alert alert-info'>Content inserted before the container.</div>");
+      mainContent.insertAdjacentHTML("afterbegin", "<p>Content inserted at the beginning of the container.</p>");
+      mainContent.insertAdjacentHTML("beforeend", "<p>Content inserted at the end of the container.</p>");
+      mainContent.insertAdjacentHTML("afterend", "<div class='alert alert-success'>Content inserted after the container.</div>");
+
+      console.log("Content inserted using insertAdjacentHTML.");
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
