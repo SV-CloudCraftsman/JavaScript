@@ -1,0 +1,62 @@
+I've updated the code to demonstrate the usage of className and classList for manipulating element classes dynamically. Buttons are added to perform actions like adding, removing, toggling, and showing classes.
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>ClassName and ClassList Example</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="mt-4">Using className and classList</h1>
+
+    <div id="contentBox" class="box bg-light p-3">
+      <p>This is a content box. Classes will be manipulated dynamically.</p>
+    </div>
+
+    <button id="addClassButton" class="btn btn-primary me-2">Add Class</button>
+    <button id="removeClassButton" class="btn btn-danger me-2">Remove Class</button>
+    <button id="toggleClassButton" class="btn btn-warning me-2">Toggle Class</button>
+    <button id="showClassesButton" class="btn btn-info">Show Classes</button>
+  </div>
+
+  <script>
+    const contentBox = document.getElementById("contentBox");
+
+    // Button event listeners
+    document.getElementById("addClassButton").addEventListener("click", () => {
+      contentBox.classList.add("highlight");
+      console.log("Class 'highlight' added.");
+    });
+
+    document.getElementById("removeClassButton").addEventListener("click", () => {
+      contentBox.classList.remove("highlight");
+      console.log("Class 'highlight' removed.");
+    });
+
+    document.getElementById("toggleClassButton").addEventListener("click", () => {
+      contentBox.classList.toggle("highlight");
+      console.log("Class 'highlight' toggled.");
+    });
+
+    document.getElementById("showClassesButton").addEventListener("click", () => {
+      console.log("Current classes:", contentBox.className);
+      alert("Current classes: " + contentBox.className);
+    });
+  </script>
+
+  <style>
+    .highlight {
+      background-color: yellow;
+      border: 2px solid red;
+    }
+  </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
