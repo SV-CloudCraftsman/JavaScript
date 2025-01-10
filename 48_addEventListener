@@ -1,0 +1,41 @@
+******************************************************************************************************************
+examples of events like dblclick, contextmenu, and using once for one-time execution.
+Explanation of the Additional Code
+Double-click (dblclick):
+
+Triggers when a user double-clicks the button.
+Displays an alert and logs the action in the console.
+Right-click (contextmenu):
+
+The contextmenu event is triggered by a right-click.
+Prevents the default browser context menu and displays a custom alert instead.
+One-time Execution (once option):
+
+The { once: true } option ensures the event listener runs only once and is automatically removed after execution.
+
+******************************************************************************************************************
+
+<button id="dblClickButton" class="btn btn-secondary mb-3">Double Click Me</button>
+<button id="contextMenuButton" class="btn btn-warning mb-3">Right Click Me</button>
+<button id="onceButton" class="btn btn-danger mb-3">Click Me Once</button>
+
+<script>
+  // Double-click Event
+  document.getElementById("dblClickButton").addEventListener("dblclick", () => {
+    alert("You double-clicked the button!");
+    console.log("Double-click event triggered.");
+  });
+
+  // Context Menu Event (Right-click)
+  document.getElementById("contextMenuButton").addEventListener("contextmenu", (event) => {
+    event.preventDefault(); // Prevent the default right-click menu
+    alert("Right-click is disabled on this button!");
+    console.log("Context menu event triggered.");
+  });
+
+  // One-time Click Event
+  document.getElementById("onceButton").addEventListener("click", () => {
+    alert("This button can only be clicked once!");
+    console.log("One-time click event triggered.");
+  }, { once: true }); // The event listener is removed after execution
+</script>
