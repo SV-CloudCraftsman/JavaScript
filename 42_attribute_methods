@@ -1,0 +1,58 @@
+******************************************************************************************************************
+Explanation of Changes:
+Button Added: A button labeled "Test Attribute Methods" is included to trigger JavaScript logic.
+JavaScript Code:
+Demonstrates getAttribute to retrieve attribute values.
+Shows setAttribute to update attribute values.
+Uses hasAttribute to check for the existence of an attribute.
+Demonstrates removeAttribute to remove an attribute from an element.
+Works with standard attributes like class in addition to custom attributes.
+******************************************************************************************************************
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Attribute Methods Example</title>
+</head>
+
+<body>
+  <div id="first" class="hey" data-game="mario" data-player="harry">
+    Hey, I am the first container
+  </div>
+  <button id="attributeButton">Test Attribute Methods</button>
+
+  <script>
+    // Example demonstrating attribute methods
+
+    document.getElementById("attributeButton").addEventListener("click", function () {
+      const element = document.getElementById("first");
+
+      // getAttribute example
+      const game = element.getAttribute("data-game");
+      console.log("Game attribute:", game);
+
+      // setAttribute example
+      element.setAttribute("data-game", "zelda");
+      console.log("Updated game attribute:", element.getAttribute("data-game"));
+
+      // hasAttribute example
+      if (element.hasAttribute("data-player")) {
+        console.log("The element has a 'data-player' attribute.");
+      }
+
+      // removeAttribute example
+      element.removeAttribute("data-player");
+      console.log("Removed 'data-player' attribute. Does it still exist?", element.hasAttribute("data-player"));
+
+      // Accessing standard attributes
+      console.log("Class attribute:", element.getAttribute("class"));
+      element.setAttribute("class", "new-class");
+      console.log("Updated class attribute:", element.getAttribute("class"));
+    });
+  </script>
+</body>
+
+</html>
