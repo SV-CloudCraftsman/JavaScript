@@ -4,22 +4,50 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>replit</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+  <title>matches_closest_contains Example</title>
 </head>
 
 <body>
-  <div class="box" id="id1">This is an element 1 <span id="sp1">Span1 </span> </div>
-  <div class="box" id="id2">This is an element 2 </div>
+  <div class="box" id="id1">This is an element 1 <span id="sp1">Span1</span></div>
+  <div class="box" id="id2">This is an element 2</div>
+  <button id="testButton">Test Matches, Closest, and Contains</button>
 
-  <script src="script.js"></script>
+  <script>
+    // Example demonstrating matches, closest, and contains
 
-  <!--
-  This script places a badge on your repl's full-browser view back to your repl's cover
-  page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green,
-  teal, blue, blurple, magenta, pink!
-  -->
-  <script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script>
+    document.getElementById("testButton").addEventListener("click", function () {
+      const spanElement = document.getElementById("sp1");
+      const divElement = document.getElementById("id1");
+
+      // matches example
+      if (spanElement.matches("span")) {
+        console.log("The element matches the 'span' selector.");
+      }
+
+      // closest example
+      const closestDiv = spanElement.closest("div");
+      if (closestDiv) {
+        console.log("The closest div is:", closestDiv.id);
+      }
+
+      // contains example
+      if (divElement.contains(spanElement)) {
+        console.log("The div contains the span element.");
+      }
+    });
+  </script>
 </body>
 
 </html>
+
+
+**************************************************
+Explanation of Changes:
+Button Added: A button was added to trigger the example code when clicked.
+JavaScript Logic: Demonstrates the usage of:
+matches to check if an element matches a specific selector.
+closest to find the nearest ancestor matching a given selector.
+contains to verify if an element contains another as a descendant.
+Console Outputs: The results of these operations are logged in the console.
+
+**************************************************
