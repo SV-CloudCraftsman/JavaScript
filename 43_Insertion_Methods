@@ -1,0 +1,71 @@
+******************************************************************************************************************
+Explanation of Changes:
+Button Added: A button labeled "Test Insertion Methods" triggers the demonstration of insertion methods.
+JavaScript Code:
+insertAdjacentHTML: Inserts HTML content before and after the .container element.
+append: Appends a new div element at the end of .container.
+prepend: Prepends a new div element at the start of .container.
+before: Inserts a div element before the #first element.
+after: Inserts a div element after the #first element.
+replaceWith: Replaces the #first element with a new div.
+
+******************************************************************************************************************
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Insertion Methods Example</title>
+</head>
+
+<body>
+  <div>I am start of this container (outer)</div>
+  <div class="container">
+    <div>I am start of this container (inner)</div>
+    <div id="first">I am the first element</div>
+    <div>I am end of this container (inner)</div>
+  </div>
+  <div>I am end of this container (outer)</div>
+
+  <button id="insertionButton">Test Insertion Methods</button>
+
+  <script>
+    // Example demonstrating insertion methods
+    document.getElementById("insertionButton").addEventListener("click", function () {
+      const container = document.querySelector(".container");
+      const firstElement = document.getElementById("first");
+
+      // insertAdjacentHTML example
+      container.insertAdjacentHTML("beforebegin", "<p>Inserted before the container</p>");
+      container.insertAdjacentHTML("afterend", "<p>Inserted after the container</p>");
+
+      // append example
+      const newDiv = document.createElement("div");
+      newDiv.textContent = "Appended element";
+      container.append(newDiv);
+
+      // prepend example
+      const prependedDiv = document.createElement("div");
+      prependedDiv.textContent = "Prepended element";
+      container.prepend(prependedDiv);
+
+      // before example
+      const beforeDiv = document.createElement("div");
+      beforeDiv.textContent = "Inserted before first element";
+      firstElement.before(beforeDiv);
+
+      // after example
+      const afterDiv = document.createElement("div");
+      afterDiv.textContent = "Inserted after first element";
+      firstElement.after(afterDiv);
+
+      // replaceWith example
+      const replacementDiv = document.createElement("div");
+      replacementDiv.textContent = "Replaced the first element";
+      firstElement.replaceWith(replacementDiv);
+    });
+  </script>
+</body>
+
+</html>
