@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Inner HTML Example</title>
+</head>
+
+<body>
+  <h1>InnerHTML Example</h1>
+  <p id="content">This is the original content of the paragraph.</p>
+  <button onclick="updateContent()">Change Content</button>
+
+  <span id="first" hidden><b>Hi</b> Hey, I am span</span>
+
+  <script>
+    function updateContent() {
+      // Using innerHTML to update the content of the paragraph
+      const contentElement = document.getElementById('content');
+      contentElement.innerHTML = "<b>Updated content:</b> This is now bold and dynamic!";
+
+      // Displaying the hidden span by updating its innerHTML and removing the hidden attribute
+      const spanElement = document.getElementById('first');
+      spanElement.hidden = false;
+      spanElement.innerHTML = "<b>Hello!</b> This is the updated span content.";
+    }
+  </script>
+</body>
+
+</html>
+
+
+******************************************************************************************
+Explanation of Changes:
+Added a Button: A button is added to trigger the updateContent function.
+JavaScript Function: The updateContent function uses innerHTML to modify the content of the <p> and <span> elements.
+Unhide <span>: The <span> element is revealed and its content is updated using innerHTML.
+******************************************************************************************
+
